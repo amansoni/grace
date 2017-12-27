@@ -1,8 +1,8 @@
 # 
 
-This application demonstrates what a React.js based register/login workflow might look like on the Frontend. I used my [react-boilerplate](https://github.com/mxstbr/react-boilerplate) as a starting point — the app thus uses  Redux, PostCSS, react-router, ServiceWorker, AppCache, bcrypt and lots more.
+This application demonstrates the register/login workflow using  [react-boilerplate](https://github.com/mxstbr/react-boilerplate) as a starting point — the app thus uses  Redux, PostCSS, react-router, ServiceWorker, AppCache, bcrypt and lots more.
 
-The default username is `AzureDiamond` and the default password is `hunter2`, but feel free to register new users! The registered users are saved to localStorage, so they'll persist across page reloads.
+Feel free to register new users! The registered users are saved to localStorage, so they'll persist across page reloads.
 
 -----
 
@@ -28,7 +28,7 @@ To change it to real authentication, you’d only have to import `request.js` in
 
 ## Getting started
 
-1. Clone this repo using `git clone git@github.com:mxstbr/login-flow`.
+1. Clone this repo.
 
 2. Run `npm install` to install the dependencies.
 
@@ -145,6 +145,3 @@ import 'file?name=[name].[ext]!../img/yourimg.png';
 
 Then webpack will correctly transfer the image to the build folder.
 
-## License
-
-This project is licensed under the MIT license, Copyright (c) 2015 Maximilian Stoiber. For more information see `LICENSE.md`.

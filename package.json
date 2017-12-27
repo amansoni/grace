@@ -1,7 +1,7 @@
 {
-  "name": "reactjs-boilerplate",
-  "version": "2.3.0",
-  "description": "Quick setup for new React.js applications featuring Redux, hot–reloading, PostCSS, react-router and Mocha.",
+  "name": "reactjs-grace",
+  "version": "1.0.0",
+  "description": "React.js application featuring Redux, hot–reloading, PostCSS, react-router and Mocha.",
   "dependencies": {
     "bcryptjs": "2.3.0",
     "fontfaceobserver": "^1.5.1",
@@ -42,12 +42,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/mxstbr/react-boilerplate.git"
+    "url": "git@github.com:amansoni/grace.git"
   },
   "scripts": {
     "start": "NODE_ENV=development node server.js",
     "build": "NODE_ENV=production webpack --config webpack.prod.config.js --progress --colors -p"
   },
-  "author": "Max Stoiber",
+  "author": "Aman Soni",
   "license": "MIT"
 }
