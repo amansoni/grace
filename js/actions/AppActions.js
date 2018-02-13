@@ -30,6 +30,16 @@ import auth from '../utils/auth';
 import genSalt from '../utils/salt';
 import { browserHistory } from 'react-router';
 
+
+/**
+ * Sets the requestSending state, which displays a loading indicator during requests
+ * @param  {boolean} sending The new state the app should have
+ * @return {object}          Formatted action for the reducer to handle
+ */
+export function callGrist(sending) {
+  return { type: SENDING_REQUEST, sending };
+}
+
 /**
  * Logs an user in
  * @param  {string} username The username of the user to be logged in

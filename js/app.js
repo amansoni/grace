@@ -55,7 +55,12 @@ import LoginPage from './components/pages/LoginPage.react';
 import RegisterPage from './components/pages/RegisterPage.react';
 import Dashboard from './components/pages/Dashboard.react';
 import NotFound from './components/pages/NotFound.react';
+import External from './components/pages/External.react';
 import App from './components/App.react';
+
+// import Sensors from './components/pages/HomePage.react';
+// import Diary from './components/pages/HomePage.react';
+// import Friends from './components/pages/HomePage.react';
 
 // Import the CSS file, which webpack transfers to the build folder
 import '../css/main.css';
@@ -68,7 +73,6 @@ const store = createStoreWithMiddleware(homeReducer);
 
 function checkAuth(nextState, replaceState) {
   let { loggedIn } = store.getState();
-
   // check if the path isn't dashboard
   // that way we can apply specific logic
   // to display/render the path we want to
@@ -104,6 +108,7 @@ ReactDOM.render(
           <Route path="/register" component={RegisterPage} />
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/profile" component={UserProfile} />
+          <Route path="/external" component={External} />
         </Route>
         <Route path="*" component={NotFound} />
       </Route>

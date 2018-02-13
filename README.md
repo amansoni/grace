@@ -145,3 +145,31 @@ import 'file?name=[name].[ext]!../img/yourimg.png';
 
 Then webpack will correctly transfer the image to the build folder.
 
+<form action="/panel/mhexperts/mh-dss-assess-light-launch.php" method="get" accept-charset="UTF-8">
+		Grist ID: <input type="text" name="clinclientid" value="testClient1"/>
+		Patient Name: <input type="text" name="metaPatientName" value="Abc"/>
+		<br />
+		Service Designation: <input type="text" name="metaServiceDesignation" value=""/>
+		<br/><span style="color:gray;"><em>Java tool only</em>: version of Java tool <em>(leave blank for default)</em>:</span> <input type="text" name="javaToolBuildID" value=""/>
+		<br/><span style="color:gray;"><em>Java tool only</em>: metaExtendedSettingsJSTool:</span> <input type="text" name="metaExtendedSettingsJSTool" value=""/>
+		<br />
+		<br />
+		<input type="hidden" name="SID" value="3u2knifpk7gh1j74jhhd2o2543" />
+		<input type="submit" value="Launch Grist" />
+	</form>
+	<br />
+	Grist ID would normally be automatically obtained from trust's database
+	</body>
+metaExtendedSettingsJSTool: {"startMode":1}
+    0 - Start from home page
+1 - My New Assessment: My state of mind
+2 - My New Assessment: What's happening in my life right now
+3 - My New Assessment: What my health is like today
+4 - My New Assessment: My safety
+5 - My New Assessment: My wellbeing
+6 - My New Assessment: Overview of everything: past and present
+7 - My Profile: My personal details
+8 - My Profile: My life journey
+9 - My Profile: My health and care
+10 - My Profile: My involvement with life and others
+11 - My Profile: My personality and way of thinking
