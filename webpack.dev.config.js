@@ -8,10 +8,7 @@ module.exports = require("./makewebpackconfig")({
 });
 
 externals : {
-  Config : JSON.stringify(process.env.env == 'production' ? {
-    drupalURL: 'https://eas-grist06.aston.ac.uk',
-    loginPATH: '/user/login?_format=json'
-  }: {
+  Config : JSON.stringify({
     drupalURL: 'https://eas-grist06.aston.ac.uk',
     loginPATH: '/user/login?_format=json'
   })

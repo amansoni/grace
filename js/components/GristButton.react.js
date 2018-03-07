@@ -4,7 +4,7 @@
  * Wraps the loading indicator in a tag with the .btn--loading class
  */
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import axios from "axios";
 
 export default class GristButton extends Component {
@@ -12,42 +12,74 @@ export default class GristButton extends Component {
 	constructor(props){
 		super(props);
 		this.props = props;
-		console.log('GristButton constructor' + props.string)
-		console.log(props)
-	}
-
-	getGristPage(targetPath){
-		return axios.post(getGristPath())
-		.then(function(arr){
-			console.log(arr)
-			return arr;
-		})
-	}
-
-	// TODO:// read from configuration setting
-	getGristPath(){
-		return axios.get('https://www.secure.egrist.org/panel/mhexperts/mh-dss-assess-light-launch.php');
+		// this.props.buttonClicked.bind()
 	}
 
 	handleClick(event) {
-		// event.preventDefault()
+		event.preventDefault()
 		var el = event.target
-		// startMode.value = '{"startMode":' + this.props.targetPath + '}'
-		grist.startMode.value = '{"startMode":' + this.props.targetPath + '}'
-		console.log(grist.startMode.value)
-		var url = 'https://www.secure.egrist.org/panel/mhexperts/mh-dss-assess-light-launch.php'
+		console.log('grist.startMode.value ' + this.props.targetPath);
+		this.props.buttonClicked(this.props.targetPath);
+	}
 
-		axios.get(url, {
-            headers: { 'Access-Control-Allow-Origin' : '*' },
-        }).then(res => { 
-            console.log('res');
-            console.log(res);
+	render(props) {
+		return (
+			<a href="#"  onClick={this.props.buttonClicked.bind(this)} key={this.props.targetPath} className="nav--dashboard--li">
+				<li>{this.props.displayText}</li>
+			</a>
+		)
+	}
+}
 
-        }).catch(error => {
-            console.log('error');
-            console.log('erro', error);
-		})
+GristButton.propTypes = {
+	displayText: React.PropTypes.string.isRequired,
+	targetPath: React.PropTypes.string.isRequired,
+	buttonClicked: React.PropTypes.func
+}
 		
+// 	}
+//   }
+
+  	// getGristPage(targetPath){
+	// 	return axios.post(getGristPath())
+	// 	.then(function(arr){
+	// 		console.log(arr)
+	// 		return arr;
+	// 	})
+	// }
+
+	// TODO:// read from configuration setting
+	// getGristPath(){
+	// 	return axios.get('https://www.secure.egrist.org/panel/mhexperts/mh-dss-assess-light-launch.php');
+	// }
+		// var url = 'https://www.secure.egrist.org/panel/mhexperts/mh-dss-assess-light-launch.php'
+
+		// axios.get(url, {
+        //     headers: { 'Access-Control-Allow-Origin' : '*' },
+        // }).then(res => { 
+        //     console.log('res');
+        //     console.log(res);
+
+        // }).catch(error => {
+        //     console.log('error');
+        //     console.log('erro', error);
+		// })
+		// state.startMode = this.props.targetPath;
+		// var url = 'https://www.secure.egrist.org/panel/mhexperts/mh-dss-portal/java-tool/java-tool.php?clinicianClientID=annon&patient-id=71463&SID=2jgmuv40n0ut6i4ek1tfgkc3p0&ll=1&ACAS=1';
+		
+		// callOtherDomain();
+
+		// var invocation = new XMLHttpRequest();
+		// var url = 'http://bar.other/resources/public-data/';
+		  
+		// function callOtherDomain() {
+		//   if(invocation) {    
+		// 	invocation.open('GET', url, true);
+		// 	invocation.onreadystatechange = handler;
+		// 	invocation.send(); 
+		//   }
+	
+
 		// var url = 'https://www.secure.egrist.org/panel/mhexperts/mh-dss-assess-light-launch.php'
 
 		// const proxyOptions = {
@@ -76,29 +108,5 @@ export default class GristButton extends Component {
 		// 	console.log(response);
 		// })
 
-		console.log('Request done')
-	}
-
-	render(props) {
-		console.log(props)	
-		return (
-			<a href="#"  onClick={this.handleClick.bind(this)} key={this.props.targetPath} className="nav--dashboard--li">
-				<li>{this.props.displayText}</li>
-			</a>
-		// <a href='#' onClick={this.handleClick.bind(this)} key={this.props.targetPath}>{this.props.displayText}</a>
-		// <input type="submit" onClick={this.handleClick.bind(this)} value={this.props.displayText} />
-		)
-	}
-}
-
-GristButton.propTypes = {
-	displayText: React.PropTypes.string.isRequired,
-	targetPath: React.PropTypes.string.isRequired
-  }
-  
-//   <form id="grist" action="https://www.secure.egrist.org/panel/mhexperts/mh-dss-assess-light-launch.php" method="get" accept-charset="UTF-8">
-//   <input type="hidden" name="clinclientid" value="testClient1"/>
-//   <input type="hidden" name="metaPatientName" value="Abc"/>
-//   <input type="hidden" name="metaExtendedSettingsJSTool" value='{"startMode":1}'/>
-//   <input type="hidden" name="SID" value="3u2knifpk7gh1j74jhhd2o2543" />
-// </form>
+	// 	console.log('Request done')
+	// }
